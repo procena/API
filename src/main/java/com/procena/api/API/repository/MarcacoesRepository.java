@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MarcacoesRepository extends CrudRepository <Marcacao, Long> {
     List <Marcacao> findAll();
+    
 }
