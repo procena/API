@@ -39,6 +39,17 @@ public class MarcacoesController {
         return String.format("Hello %s!", name);
     }
 
+    @GetMapping("/marcacao/{data}")
+    public List<Marcacao> getMarcacoesByData(@PathVariable String data) {
+        return marcacoesController.findByData(data);
+
+    }
+
+    @GetMapping("marcacao-mes/{mes}")
+    public List<Marcacao> getMarcacoesByMonth(@PathVariable String mes) {
+        return marcacoesController.findByMonth(mes);
+    }
+
     @GetMapping("/marcacoes")
     public List<Marcacao> getCountries() {
 
@@ -65,4 +76,5 @@ public class MarcacoesController {
     public void deleteMarcacao(@PathVariable Long id) {
         marcacoesController.deleteById(id);
     }
+
 }
